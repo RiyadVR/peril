@@ -35,8 +35,6 @@ func main() {
 
 	gameState := gamelogic.NewGameState(username)
 
-	gamelogic.PrintClientHelp()
-
 	for {
 		inputs := gamelogic.GetInput()
 		if len(inputs) == 0 {
