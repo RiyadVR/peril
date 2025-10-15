@@ -50,7 +50,7 @@ func main() {
 		log.Fatalf("could not subscribe to army move: %v", err)
 	}
 
-	err = pubsub.SubscribeJSON(conn, routing.ExchangePerilTopic, routing.WarRecognitionsPrefix, routing.WarRecognitionsPrefix+".*", pubsub.Durable, handlerWar(gameState))
+	err = pubsub.SubscribeJSON(conn, routing.ExchangePerilTopic, routing.WarRecognitionsPrefix, routing.WarRecognitionsPrefix+".*", pubsub.Durable, handlerWar(gameState, publishCh))
 	if err != nil {
 		log.Fatalf("could not subscribe to war: %v", err)
 	}
