@@ -11,7 +11,7 @@ import (
 
 func handlerMove(gs *gamelogic.GameState, publishCh *amqp.Channel) func(gamelogic.ArmyMove) pubsub.Acktype {
 	return func(am gamelogic.ArmyMove) pubsub.Acktype {
-		defer fmt.Print("> ")
+		defer fmt.Println("> ")
 		moveOutcome := gs.HandleMove(am)
 		switch moveOutcome {
 		case gamelogic.MoveOutcomeSamePlayer:

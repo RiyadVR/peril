@@ -10,7 +10,7 @@ import (
 
 func handlerLog() func(gamelog routing.GameLog) pubsub.Acktype {
 	return func(gamelog routing.GameLog) pubsub.Acktype {
-		defer fmt.Print("> ")
+		defer fmt.Println("> ")
 
 		err := gamelogic.WriteLog(gamelog)
 		if err != nil {
